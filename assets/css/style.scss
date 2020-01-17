@@ -1,0 +1,26 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/*
+https://www.schemecolor.com/green-and-pink-pendant-color-scheme.php
+#155812
+#5EA01A
+#7BC063
+#A01361
+#EC3E9C
+ */
+h1, h2, h3, h4, h5, h6 {
+  color: #EC3E9C;
+}
+header h1 {
+         color: #EC3E9C;
+}
+a {
+  color: #7BC063;
+}
+
+body {
+  background: #ffffff;
+}

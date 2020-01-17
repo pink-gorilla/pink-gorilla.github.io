@@ -1,4 +1,6 @@
-## Welcome to GitHub Pages
+## Welcome
+
+![Image](images/wtf-is-jupyther.png)
 
 You can use the [editor on GitHub](https://github.com/pink-gorilla/pink-gorilla.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
