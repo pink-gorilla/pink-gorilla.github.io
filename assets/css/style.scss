@@ -1,0 +1,58 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/*
+https://www.schemecolor.com/green-and-pink-pendant-color-scheme.php
+#155812
+#5EA01A
+#7BC063
+#A01361
+#EC3E9C
+ */
+h1, h2, h3, h4, h5, h6 {
+  color: #EC3E9C;
+}
+/*
+h1::before {
+  content:url('images/gorilla-pink-64.png';)
+}
+*/
+header {
+  background: #ffffff;
+  border-bottom: 1px dashed #5EA01A;
+}
+header h1 {
+         color: #EC3E9C;
+}
+
+code.highlighter-rouge {
+  background: #ffffff;
+  color: #A01361;
+}
+
+header h2 {
+  color: #A01361
+}
+
+a {
+  color: #7BC063;
+}
+
+body {
+  background: #ffffff;
+  color: rgba(68, 68, 68, 1.0);
+}
+
+ul li {
+  list-style-image: none;
+}
+
+h2 img {
+  padding: 0px 2px;
+}
+
+.github-fork-ribbon:before {
+  background-color: #A01361;
+}

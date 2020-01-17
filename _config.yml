@@ -1,0 +1,9 @@
+theme: jekyll-theme-hacker
+title: Pink Gorilla
+image: images/pink-gorilla.png
+logo: images/pink-gorilla.png
+description: An interactive notebook for Clojure land - resurrected 2019
+twitter:
+  card: summary
+plugins:
+  - jemoji
