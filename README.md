@@ -2,7 +2,7 @@
 
 ![WTF Jupther](images/wtf-is-jupyter.png)
 
-Pink Gorilla Notebook is a browser based notebook REPL for Clojure and ClojureScript. We aim at extensibility (development- and runtime) and user experience while being very lightweight. Extensibility primarily revolves around UI widgets and data.
+Pink Gorilla Notebook is a browser based notebook REPL for Clojure and ClojureScript. We aim at extensibility (development- and runtime) and user experience while being very lightweight. Extensibility primarily revolves around visualisation, widgets and data.
 
 Use cases we are trying to cover are
 - Data science
