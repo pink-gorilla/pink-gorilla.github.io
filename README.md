@@ -15,9 +15,10 @@ leveraging Python and R are examples.
 
 
 ## Status (January 2020)
-You can probably imagine that ideas come up way faster than you can explore them.
-
-So far, we were primarily focused on cleaning up the house and build a solid foundation for the future. Basic building blocks to move fast and safe (Tests, CI/CD, Code Quality Tooling) are in place and we caught up with recent versions of the things we use:
+You can probably imagine that ideas come up way faster than you can explore them. So far, we were
+ primarily focused on cleaning up the house and building a solid foundation for the future. Basic building
+  blocks to move fast and safe (Tests, CI/CD, Code Quality Tooling) are in place and we caught up with
+  recent versions of the things we use:
 
 - Clojure/ClojureScript
 - Shadow CLJS
@@ -42,7 +43,8 @@ The future is uncertain, but we are not aware of any technical issues which shou
 
 ### What about migration from Gorilla REPL?
 Being a decendant from [Gorilla REPL](http://gorilla-repl.org) we aim at a smooth migration path for the brave and also remain backwards
- compatible where reasonable. Given the nature of Reagent, this did not appear to make sense with regards to persisted html. We ended up introducing version 2 persistence (transit based) while still supporting version 1 persistence (shamelessly discarding output). Other than that,
+ compatible. Given the nature of Reagent, this did not appear to make sense with regards to persisted html. We ended up introducing version 2
+  persistence (transit based) while still supporting version 1 (shamelessly discarding output). Other than that,
   URLs have slightly changed. The viewer is at `.../worksheet.html#/view` now. You may want to try
  [here](http://localhost:9000/worksheet.html#/view?source=github&user=JonyEpsilon&repo=gorilla-test&path=ws/graph-examples.clj)
  in case you have it running at port `9000`.
@@ -64,15 +66,15 @@ We support JVM library (`pomegranate`)-, ClojureScript- and JavaScript (`require
 
 The easiest way to run releases locally is leveraging the `clojure` cli
 ```
-clojure -Sdeps '{:deps {org.pinkgorilla/gorilla-notebook {:mvn/version "0.4.2"}}}' -m pinkgorilla.core
+clojure -Sdeps '{:deps {org.pinkgorilla/gorilla-notebook {:mvn/version "0.4.5"}}}' -m pinkgorilla.core
 ```
 You'll get available command line options appending `--help`:
 ```
-clojure -Sdeps '{:deps {org.pinkgorilla/gorilla-notebook {:mvn/version "0.4.2"}}}' -m pinkgorilla.core --help
+clojure -Sdeps '{:deps {org.pinkgorilla/gorilla-notebook {:mvn/version "0.4.5"}}}' -m pinkgorilla.core --help
 ```
 so
 ```
-clojure -Sdeps '{:deps {org.pinkgorilla/gorilla-notebook {:mvn/version "0.4.2"}}}' -m pinkgorilla.core -P 9111
+clojure -Sdeps '{:deps {org.pinkgorilla/gorilla-notebook {:mvn/version "0.4.5"}}}' -m pinkgorilla.core -P 9111
 ```
 will start up the HTTP server at port 9111.
 
@@ -80,7 +82,7 @@ will start up the HTTP server at port 9111.
 
 Alternatively, you can use the Clojure Docker image:
 ```
-docker run -p 9000:9000 -v `pwd`/.m2:/root/.m2:rw -v `pwd`/notebooks:/tmp/notebooks:rw --rm clojure:tools-deps clojure -Sdeps '{:deps {org.pinkgorilla/gorilla-notebook {:mvn/version "0.4.2"}}}' -m pinkgorilla.core
+docker run -p 9000:9000 -v `pwd`/.m2:/root/.m2:rw -v `pwd`/notebooks:/tmp/notebooks:rw --rm clojure:tools-deps clojure -Sdeps '{:deps {org.pinkgorilla/gorilla-notebook {:mvn/version "0.4.5"}}}' -m pinkgorilla.core
 ```
 You may want to use bind mounts to retain your work and to prevent downloading half of the internet.
 
