@@ -2,21 +2,20 @@
 
 ![WTF Jupther](images/wtf-is-jupyter.png)
 
-Pink Gorilla Notebook is a browser based notebook REPL for Clojure and ClojureScript. We aim at extensibility (development- and runtime) and user experience while being very lightweight. Extensibility primarily revolves around visualisation, widgets and data.
+Pink Gorilla Notebook is a browser based notebook REPL for Clojure and ClojureScript. We aim at a small core application with a high level of runtime extensibility and great user experience. Extensibility primarily revolves around visualisation, widgets and data.
 
-Use cases we are trying to cover are
+Use cases we are trying to cover include
 - Data science
 - Persistent experiments and demos (Clojure/ClojureScript libraries)
 - Courses and education on all matters related to clojure
-- Pluggable "alien" JEE webapp instrumentation
+- Pluggable JEE webapp instrumentation
 
-We borrow from other ecosystems where it appears reasonable. Wrapping and
-leveraging Python and R are examples.
+We use various libraries and also borrow from alien ecosystems (Python and R).
 
 
 ## Status (January 2020)
 You can probably imagine that ideas come up way faster than you can explore them. So far, we were
- primarily focused on cleaning up the house and building a solid foundation for the future. Basic building
+ primarily focused on cleaning up and building a solid foundation for the future. Basic building
   blocks to move fast and safe (Tests, CI/CD, Code Quality Tooling) are in place and we caught up with
   recent versions of the things we use:
 
@@ -31,9 +30,9 @@ You can probably imagine that ideas come up way faster than you can explore them
 However, not everything is :rainbow: yet. There is yak to shave and some things are still missing or rough:
 
 - Tests
-- Routing (Clojure/ClojureScript)
+- Ring/Secretary
 - Re-frame
-- CSS :nail_care:
+- Styling :nail_care:
 - Dependency hell :fire:
 - ClojureScript Kernel
 
@@ -143,7 +142,7 @@ lein build-tailwind-dev
 
 builds css and spins up the webserver and a Shadow CLJS build with JPDA debugging. NREPL should be serving you Clojure and ClojureScript at port `8703`.
 
-## Web Interface
+### Web Interface
 Whichever method you use to start application, you should reach it at [`http://localhost:9000/worksheet.html`](http://localhost:9000/worksheet.html).
 
 This source comes with various [test notebooks](https://github.com/pink-gorilla/gorilla-notebook/notebooks/) to try and the explorer should have some more. Some of them have known issues (hopefully indicated).
@@ -154,7 +153,7 @@ Finally, there is a bunch of aliases in `project.clj` you might want to check. T
 lein help
 ```
 
-## As a library
+### As a library
 Add a dependency in your project and tweak dependencies until things work. This is
  what I did (2017) with [lambdalf](https://github.com/deas/lambdalf). Again, if things go well,
  Pink Gorilla will appear at `.../your-app-context/gorilla-repl/worksheet.html`.
