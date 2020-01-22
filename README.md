@@ -69,15 +69,15 @@ We support JVM library (`pomegranate`)-, ClojureScript- and JavaScript (`require
 
 The easiest way to run releases locally is leveraging the `clojure` cli
 ```
-clojure -Sdeps '{:deps {org.pinkgorilla/gorilla-notebook {:mvn/version "0.4.6"}}}' -m pinkgorilla.core
+clojure -Sdeps '{:deps {org.pinkgorilla/gorilla-notebook {:mvn/version "0.4.9"}}}' -m pinkgorilla.core
 ```
 You'll get available command line options appending `--help`:
 ```
-clojure -Sdeps '{:deps {org.pinkgorilla/gorilla-notebook {:mvn/version "0.4.6"}}}' -m pinkgorilla.core --help
+clojure -Sdeps '{:deps {org.pinkgorilla/gorilla-notebook {:mvn/version "0.4.9"}}}' -m pinkgorilla.core --help
 ```
 so
 ```
-clojure -Sdeps '{:deps {org.pinkgorilla/gorilla-notebook {:mvn/version "0.4.6"}}}' -m pinkgorilla.core -P 9111
+clojure -Sdeps '{:deps {org.pinkgorilla/gorilla-notebook {:mvn/version "0.4.9"}}}' -m pinkgorilla.core -P 9111
 ```
 will start up the HTTP server at port 9111.
 
@@ -85,7 +85,7 @@ will start up the HTTP server at port 9111.
 
 Alternatively, you can use the Clojure Docker image:
 ```
-docker run -p 9000:9000 -v `pwd`/.m2:/root/.m2:rw -v `pwd`/notebooks:/tmp/notebooks:rw --rm clojure:tools-deps clojure -Sdeps '{:deps {org.pinkgorilla/gorilla-notebook {:mvn/version "0.4.6"}}}' -m pinkgorilla.core
+docker run -p 9000:9000 -v `pwd`/.m2:/root/.m2:rw -v `pwd`/notebooks:/tmp/notebooks:rw --rm clojure:tools-deps clojure -Sdeps '{:deps {org.pinkgorilla/gorilla-notebook {:mvn/version "0.4.9"}}}' -m pinkgorilla.core
 ```
 You may want to use bind mounts to retain your work and to prevent downloading half of the internet.
 
