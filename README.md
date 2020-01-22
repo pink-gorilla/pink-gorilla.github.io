@@ -51,7 +51,7 @@ Being a decendant from [Gorilla REPL](http://gorilla-repl.org) we aim at a smoot
  in case you have it running at port `9000`.
 - We introduced compatibility namespaces `gorilla-plot.*`, `gorilla-renderable.*` and `gorilla-repl.*`. `gorilla-plot.*`
  is a bit tricky and not quite finished because we want to add non-essential dependencies at runtime. 
-
+- We are not compatible with [gorilla-test](https://github.com/JonyEpsilon/gorilla-test) and we don't have plans to provide a similar "all-in-one" server side library either. We prefer dynamic dependencies (`add-dependencies` in notebooks) and rendering fully delegated to the browser. Getting the parts (`incanter`, `loom`, `expresso`) working dynamically should not be hard. 
 
 ## Extensibility
 
