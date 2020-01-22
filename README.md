@@ -42,11 +42,15 @@ The future is uncertain, but we are not aware of any technical issues which shou
 
 ### What about migration from Gorilla REPL?
 Being a decendant from [Gorilla REPL](http://gorilla-repl.org) we aim at a smooth migration path for the brave and also remain backwards
- compatible. Given the nature of Reagent, this did not appear to make sense with regards to persisted html. We ended up introducing version 2
-  persistence (transit based) while still supporting version 1 (shamelessly discarding output). Other than that,
-  URLs have slightly changed. The viewer is at `.../worksheet.html#/view` now. You may want to try
+ compatible. However:
+
+- Given the nature of Reagent, this did not appear to make sense with regards to persisted html. We ended up introducing version 2
+  persistence (transit based) while still supporting version 1 (shamelessly discarding output).
+- URLs have slightly changed. The viewer is at `.../worksheet.html#/view` now. You may want to try
  [here](http://localhost:9000/worksheet.html#/view?source=github&user=JonyEpsilon&repo=gorilla-test&path=ws/graph-examples.clj)
  in case you have it running at port `9000`.
+- We introduced compatibility namespaces `gorilla-plot.*`, `gorilla-renderable.*` and `gorilla-repl.*`. `gorilla-plot.*`
+ is a bit tricky and not quite finished because we want to add non-essential dependencies at runtime. 
 
 
 ## Extensibility
@@ -87,7 +91,7 @@ You may want to use bind mounts to retain your work and to prevent downloading h
 
 We also provide uberjar Docker images which can be run as follows:
 ```
-docker run --rm -p 9000:9000 pinkgorillawb/gorilla-notebook:latest
+docker run --rm -p 9000:9000 pinkgorillawb/gorilla-notebook:jdk
 ```
 
 If you aim at running a Docker image built on demand from git by [ctr.run](ctr.run) (which is awesome) you can
@@ -105,7 +109,7 @@ If you want some samples to play with, you may want to clone and mount the sampl
 
 ```
 git clone https://github.com/pink-gorilla/sample-notebooks
-docker run --rm -p 9000:9000 -v `pwd`/sample-notebooks/samples:/work/sample-notebooks:rw pinkgorillawb/gorilla-notebook:latest
+docker run --rm -p 9000:9000 -v `pwd`/sample-notebooks/samples:/work/sample-notebooks:rw pinkgorillawb/gorilla-notebook:jdk
 ```
 ### Locally from source
 
