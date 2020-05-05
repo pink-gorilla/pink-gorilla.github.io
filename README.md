@@ -22,6 +22,30 @@ This source comes with various [test notebooks](https://github.com/pink-gorilla/
 
 # Running Gorilla Notebook
 
+## as a leiningen plugin
+
+To use Gorilla in one of your Leiningen projects,  add the following to the :plugins section of that project’s project.clj file:
+
+```
+[lein-pinkgorilla "0.0.1"]
+```
+
+Your completed project.clj file might look something like this:
+
+```
+(defproject your-demo "0.1.0-SNAPSHOT"
+  :description "A demo project for PinkGorilla Notebook."
+  :dependencies [[org.clojure/clojure "1.10.0"]]
+  :main ^:skip-aot demo.core
+  :target-path "target/%s"
+  :plugins [[lein-pinkgorilla "0.0.1"]]
+  :profiles {:uberjar {:aot :all}})
+```
+
+That’s it. You should now be able to run ```lein pinkgorilla``` from within the project directory and get started.
+
+
+
 ## inside your project.clj (as a clojars library)
 
 Add a dependency in your project, and start gorilla-notebook, a good example is [python-gorilla](https://github.com/pink-gorilla/python-gorilla/blob/master/profiles/notebook/src/notebook/main.clj). 
