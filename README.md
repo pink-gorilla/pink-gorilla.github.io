@@ -4,7 +4,6 @@
 
 Pink Gorilla Notebook is a browser based notebook REPL for Clojure and ClojureScript. We aim at a small core application with a high level of runtime extensibility and great user experience. Extensibility primarily revolves around visualisation, widgets and data.
 
-
 ### Use cases
 - Data science
 - Persistent experiments and demos (Clojure/ClojureScript libraries)
@@ -38,13 +37,15 @@ Your completed project.clj file might look something like this:
   :dependencies [[org.clojure/clojure "1.10.0"]]
   :main ^:skip-aot demo.core
   :target-path "target/%s"
-  :plugins [[lein-pinkgorilla "0.0.1"]]
+  :plugins [[org.pinkgorilla/lein-pinkgorilla "0.0.1"]]
   :profiles {:uberjar {:aot :all}})
 ```
 
 That’s it. You should now be able to run ```lein pinkgorilla``` from within the project directory and get started.
 
+Alternatively, just add the following to your ~/.lein/profiles.clj
 
+{:user {:plugins [[org.pinkgorilla/lein-pinkgorilla "0.0.1"]]}}
 
 ## inside your project.clj (as a clojars library)
 
