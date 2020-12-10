@@ -15,7 +15,7 @@ Pink Gorilla Notebook is a browser based notebook REPL for Clojure and ClojureSc
 
 Whichever method you use to start application, you should reach it at [`http://localhost:9000/worksheet.html`](http://localhost:9000/worksheet.html).
 
-This source comes with various [test notebooks](https://github.com/pink-gorilla/gorilla-notebook/notebooks/) to try and the explorer should have some more. 
+This source comes with various [test notebooks](https://github.com/pink-gorilla/gorilla-notebook/tree/master/notebooks) to try and the explorer should have some more. 
 
 
 
