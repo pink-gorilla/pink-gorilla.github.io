@@ -13,62 +13,35 @@ Pink Gorilla Notebook is a browser based notebook REPL for Clojure and ClojureSc
 
 ### Web Interface
 
-Whichever method you use to start application, you should reach it at [`http://localhost:9000/worksheet.html`](http://localhost:9000/worksheet.html).
+Whichever method you use to start application, you should reach it at [`http://localhost:8000/`](http://localhost:8000/).
 
-This source comes with various [test notebooks](https://github.com/pink-gorilla/gorilla-notebook/tree/master/notebooks) to try and the explorer should have some more. 
-
-
+This source comes with various [test notebooks](https://github.com/pink-gorilla/notebook/tree/master/notebooks) to try and the explorer should have some more. 
 
 # Running Gorilla Notebook
-
-## as a leiningen plugin
-
-To use Gorilla in one of your Leiningen projects,  add the following to the :plugins section of that project’s project.clj file:
-
-```
-[lein-pinkgorilla "0.0.8"]
-```
-
-Your completed project.clj file might look something like this:
-
-```
-(defproject your-demo "0.1.0-SNAPSHOT"
-  :description "A demo project for PinkGorilla Notebook."
-  :dependencies [[org.clojure/clojure "1.10.0"]]
-  :main ^:skip-aot demo.core
-  :target-path "target/%s"
-  :plugins [[org.pinkgorilla/lein-pinkgorilla "0.0.8"]]
-  :profiles {:uberjar {:aot :all}})
-```
-
-That’s it. You should now be able to run ```lein pinkgorilla``` from within the project directory and get started.
-
-Alternatively, just add the following to your ~/.lein/profiles.clj
-
-{:user {:plugins [[org.pinkgorilla/lein-pinkgorilla "0.0.8"]]}}
-
-A demo project that uses lein-pinkgorilla is [ta](https://github.com/pink-gorilla/trateg)
-
-## inside your project.clj (as a clojars library)
-
-Add a dependency in your project, and start gorilla-notebook, a good example is [python-gorilla](https://github.com/pink-gorilla/python-gorilla/blob/master/profiles/notebook/src/notebook/main.clj). 
-
 
 ## via clojure (as a clojars library)
 
 The easiest way to run releases locally is leveraging the `clojure` cli
 ```
-clojure -Sdeps '{:deps {org.pinkgorilla/gorilla-notebook {:mvn/version "0.4.9"}}}' -m pinkgorilla.core
+clojure -Sdeps '{:deps {org.pinkgorilla/notebook-bundel {:mvn/version "0.5.5"}}}' -m pinkgorilla.notebook-ui.app-bundel.app
 ```
-You'll get available command line options appending `--help`:
+
+One way to configure the notebook is to pass it a edn configuration file. An example is
+[test config](https://github.com/pink-gorilla/notebook/blob/master/resources/notebook-bundel.edn)
+
+In your deps.edn add this alias:
 ```
-clojure -Sdeps '{:deps {org.pinkgorilla/gorilla-notebook {:mvn/version "0.4.9"}}}' -m pinkgorilla.core --help
+:notebook {:extra-deps {org.pinkgorilla/notebook-bundel {:mvn/version "0.5.5"}}
+           :exec-fn pinkgorilla.notebook-ui.app-bundel.app/notebook-bundel-run!
+           :exec-args {:config "notebook-config.edn"}}
 ```
-so
-```
-clojure -Sdeps '{:deps {org.pinkgorilla/gorilla-notebook {:mvn/version "0.4.9"}}}' -m pinkgorilla.core -P 9111
-```
-will start up the HTTP server at port 9111.
+then run it with `clojure -M:notebook`.
+
+
+## inside your project.clj (as a clojars library)
+
+Add a dependency in your project, and start gorilla-notebook, a good example is [python-gorilla](https://github.com/pink-gorilla/python-gorilla/blob/master/profiles/notebook/src/notebook/main.clj). 
+
 
 ## Via Docker Image
 
