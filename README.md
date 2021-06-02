@@ -2,47 +2,6 @@
 
 ![WTF Jupther](images/wtf-is-jupyter.png)
 
-Pink Gorilla Notebook is a browser based notebook REPL for Clojure and ClojureScript. We aim at a small core application with a high level of runtime extensibility and great user experience. Extensibility primarily revolves around visualisation, widgets and data.
-
-### Use cases
-- Data science
-- Persistent experiments and demos (Clojure/ClojureScript libraries)
-- Courses and education on all matters related to clojure
-- Pluggable JEE webapp instrumentation
-
-
-### Web Interface
-
-Whichever method you use to start application, you should reach it at [`http://localhost:8000/`](http://localhost:8000/).
-
-This source comes with various [test notebooks](https://github.com/pink-gorilla/notebook/tree/master/notebooks) to try and the explorer should have some more. 
-
-# Running Gorilla Notebook
-
-## via clojure (as a clojars library)
-
-The easiest way to run releases locally is leveraging the `clojure` cli
-```
-clojure -Sdeps '{:deps {org.pinkgorilla/notebook-bundel {:mvn/version "0.5.5"}}}' -m pinkgorilla.notebook-ui.app-bundel.app
-```
-
-One way to configure the notebook is to pass it a edn configuration file. An example is
-[test config](https://github.com/pink-gorilla/notebook/blob/master/resources/notebook-bundel.edn)
-
-In your deps.edn add this alias:
-```
-:notebook {:extra-deps {org.pinkgorilla/notebook-bundel {:mvn/version "0.5.5"}}
-           :exec-fn pinkgorilla.notebook-ui.app-bundel.app/notebook-bundel-run!
-           :exec-args {:config "notebook-config.edn"}}
-```
-then run it with `clojure -M:notebook`.
-
-
-## inside your project.clj (as a clojars library)
-
-Add a dependency in your project, and start gorilla-notebook, a good example is [python-gorilla](https://github.com/pink-gorilla/python-gorilla/blob/master/profiles/notebook/src/notebook/main.clj). 
-
-
 ## Via Docker Image
 
 ### prebuild docker images
